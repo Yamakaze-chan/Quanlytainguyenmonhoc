@@ -1,0 +1,134 @@
+body {
+    font-family: "Century Gothic", "Lato", sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .et-hero-tabs,
+  .et-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background: #eee;
+    text-align: center;
+    padding: 0 2em;
+  }
+  .et-hero-tabs h1,
+  .et-slide h1 {
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 1rem;
+  }
+  .et-hero-tabs h3,
+  .et-slide h3 {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.6;
+  }
+  
+  .et-hero-tabs-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    z-index: 10;
+  }
+  .et-hero-tabs-container--top {
+    position: fixed;
+    top: 0;
+  }
+  
+  .et-hero-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #000;
+    letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: 0.8rem;
+  }
+  .et-hero-tab:hover {
+    color: white;
+    background: rgba(102, 177, 241, 0.8);
+    transition: all 0.5s ease;
+  }
+  
+  .et-hero-tab-slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    background: #66b1f1;
+    transition: left 0.3s ease;
+  }
+
+  #header_neon{
+      color: #fff;
+      text-transform: uppercase;
+      font-weight:bolder;
+      font-size: 2em;
+      text-shadow: 2px 2px 1px rgba(0,0,0,.4),
+    0 0 20px #69F0AE,
+    0 0 40px rgba(0, 230, 118, .75),
+    0 0 50px rgba(0, 230, 118, .75),
+    0 0 100px rgba(0, 230, 118, .75);
+  }
+
+  .box {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    text-stroke: 0.5px;
+    color: #ff61d8;
+  }
+  .box .swap {
+    display: inline-block;
+    position: relative;
+    min-width: 1em;
+    min-height: 1em;
+    transition-duration: 0.5s;
+    list-style-type: none;
+    transition-property: transform width;
+  }
+  .box .swap li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    white-space: nowrap;
+    border-radius: 0.2em;
+    padding: 0.3em 0.5em;
+    background-color: #ffcc81;
+    color: black;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+  }
+  .box .swap li.visible {
+    opacity: 1;
+  }
+  
+  @media (min-width: 800px) {
+    .et-hero-tabs h1,
+  .et-slide h1 {
+      font-size: 3rem;
+    }
+    .et-hero-tabs h3,
+  .et-slide h3 {
+      font-size: 1rem;
+    }
+  
+    .et-hero-tab {
+      font-size: 1rem;
+    }
+  }
