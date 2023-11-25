@@ -1,134 +1,285 @@
 body {
     font-family: "Century Gothic", "Lato", sans-serif;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .et-hero-tabs,
-  .et-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    background: #eee;
-    text-align: center;
-    padding: 0 2em;
-  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.et-hero-tabs,
+.et-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: #eee;
+  text-align: center;
+  padding: 0 2em;
+}
+.et-hero-tabs h1,
+.et-slide h1 {
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 1rem;
+}
+.et-hero-tabs h3,
+.et-slide h3 {
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.6;
+}
+
+.et-hero-tabs-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  z-index: 10;
+}
+.et-hero-tabs-container--top {
+  position: fixed;
+  top: 0;
+}
+
+.et-hero-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #000;
+  letter-spacing: 0.1rem;
+  transition: all 0.5s ease;
+  font-size: 0.8rem;
+}
+.et-hero-tab:hover {
+  color: white;
+  background: rgba(102, 177, 241, 0.8);
+  transition: all 0.5s ease;
+}
+
+.et-hero-tab-slider {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background: #66b1f1;
+  transition: left 0.3s ease;
+}
+
+#header_neon{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight:bolder;
+    font-size: 2em;
+    text-shadow: 2px 2px 1px rgba(0,0,0,.4),
+  0 0 20px #69F0AE,
+  0 0 40px rgba(0, 230, 118, .75),
+  0 0 50px rgba(0, 230, 118, .75),
+  0 0 100px rgba(0, 230, 118, .75);
+}
+
+.box {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  text-stroke: 0.5px;
+  color: #ff61d8;
+}
+.box .swap {
+  display: inline-block;
+  position: relative;
+  min-width: 1em;
+  min-height: 1em;
+  transition-duration: 0.5s;
+  list-style-type: none;
+  transition-property: transform width;
+}
+.box .swap li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  padding: 0.3em 0.5em;
+  background-color: #ffcc81;
+  color: black;
+  transition-duration: 0.5s;
+  transition-property: opacity;
+}
+.box .swap li.visible {
+  opacity: 1;
+}
+
+@media (min-width: 800px) {
   .et-hero-tabs h1,
-  .et-slide h1 {
-    font-size: 2rem;
-    margin: 0;
-    letter-spacing: 1rem;
+.et-slide h1 {
+    font-size: 3rem;
   }
   .et-hero-tabs h3,
-  .et-slide h3 {
+.et-slide h3 {
     font-size: 1rem;
-    letter-spacing: 0.3rem;
-    opacity: 0.6;
   }
-  
-  .et-hero-tabs-container {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 70px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    z-index: 10;
-  }
-  .et-hero-tabs-container--top {
-    position: fixed;
-    top: 0;
-  }
-  
+
   .et-hero-tab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    color: #000;
-    letter-spacing: 0.1rem;
-    transition: all 0.5s ease;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
-  .et-hero-tab:hover {
-    color: white;
-    background: rgba(102, 177, 241, 0.8);
-    transition: all 0.5s ease;
-  }
+}
+
+#header_btn{
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px 0;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 50px;
+  margin-top: 20px;
   
-  .et-hero-tab-slider {
+}
+#header_btn:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+#header_btn:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+#header_btn:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+#header_btn span{
     position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 6px;
-    background: #66b1f1;
-    transition: left 0.3s ease;
-  }
-
-  #header_neon{
-      color: #fff;
-      text-transform: uppercase;
-      font-weight:bolder;
-      font-size: 2em;
-      text-shadow: 2px 2px 1px rgba(0,0,0,.4),
-    0 0 20px #69F0AE,
-    0 0 40px rgba(0, 230, 118, .75),
-    0 0 50px rgba(0, 230, 118, .75),
-    0 0 100px rgba(0, 230, 118, .75);
-  }
-
-  .box {
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    font-weight: bold;
-    font-size: 2rem;
-    text-stroke: 0.5px;
-    color: #ff61d8;
-  }
-  .box .swap {
-    display: inline-block;
-    position: relative;
-    min-width: 1em;
-    min-height: 1em;
-    transition-duration: 0.5s;
-    list-style-type: none;
-    transition-property: transform width;
-  }
-  .box .swap li {
-    position: absolute;
+    display: block;
+}
+#header_btn span:nth-child(1){
     top: 0;
     left: 0;
-    opacity: 0;
-    white-space: nowrap;
-    border-radius: 0.2em;
-    padding: 0.3em 0.5em;
-    background-color: #ffcc81;
-    color: black;
-    transition-duration: 0.5s;
-    transition-property: opacity;
-  }
-  .box .swap li.visible {
-    opacity: 1;
-  }
-  
-  @media (min-width: 800px) {
-    .et-hero-tabs h1,
-  .et-slide h1 {
-      font-size: 3rem;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
     }
-    .et-hero-tabs h3,
-  .et-slide h3 {
-      font-size: 1rem;
+    50%,100%{
+        left: 100%;
     }
-  
-    .et-hero-tab {
-      font-size: 1rem;
+}
+#header_btn span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
     }
-  }
+    50%,100%{
+        top: 100%;
+    }
+}
+#header_btn span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+#header_btn span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  width: 30%;
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end 2;
+}
+
+.typewriter a h2{
+  color: #fff;
+  text-decoration: underline;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end 2;
+    animation-fill-mode: both;
+  animation-delay:3.5s;
+}
+
+.typewriter a h2:hover{
+  background-color: #69F0AE;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 30% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
