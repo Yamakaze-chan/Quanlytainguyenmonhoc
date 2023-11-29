@@ -271,54 +271,45 @@
         <main class="et-main">
             <section class="et-slide" id="tab-es6" style="background-color: aqua;">
                 <div class="row" style="width: 100%;">
-                    <div class="col-7 d-flex justify-content-center d-flex align-items-center">
+                    <div class="col-7 justify-content-center align-items-center">
                         <div>
                         <h1>Tài liệu lý thuyết</h1>
                         <h3>Chúng tôi tập hợp các tài liệu lý thuyết từ nhiều nguồn về đây</h3>
                         </div>
                     </div>
-                    <div class="component col-5 d-flex justify-content-center d-flex align-items-center">
-                        <ul class="align">
-                            <li>
-                                <figure class='book'>
-
-                                    <!-- Front -->
-
-                                    <ul class='hardcover_front'>
-                                        <li>
-                                            <div class="coverDesign blue">
-                                                <h1>CSS</h1>
-                                                <p>BOOK</p>
-                                            </div>
-                                        </li>
-                                        <li></li>
-                                    </ul>
-
-                                    <!-- Pages -->
-
-                                    <ul class='page'>
-                                        <li></li>
-                                        <li>
-                                            <a class="btn" href="#">Download</a>
-                                        </li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-
-                                    <!-- Back -->
-
-                                    <ul class='hardcover_back'>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                    <ul class='book_spine'>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </figure>
-                            </li>
-                        </ul>
+                    <div class="component col-5 justify-content-center align-items-center">
+                        <!-- Book 1 -->
+    <li>
+      <figure class='book'>        
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="https://s.cdpn.io/13060/book1.jpg" alt="" width="100%" height="100%">
+            <span class="ribbon bestseller">Nº1</span>
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>  
                     </div>
 	
                 </div>
@@ -336,9 +327,20 @@
                         <img src="../img/drawing_Mumei.gif">
                     </div>
             </section>
-            <section class="et-slide" id="tab-react">
-                <h1>React</h1>
-                <h3>something about react</h3>
+            <section class="et-slide" id="tab-react" style="background-color: white">
+                <div class="row align-items-center justify-content-around" ;>
+                    <div class="col-3">
+                        <img src="./img/saved_doc2.jpg" style="width: 100%;">
+                    </div>
+                    <div class="col-4">
+                        <h1>Lưu trữ tài liệu</h1>
+                        <h3>Cho bạn và cho mọi người</h3>
+                        <button onclick="location.href='save_file.php'">-></button>
+                    </div>
+                    <div class="col-3">
+                        <img src="./img/saved_doc1.jpg" style="width: 100%;">
+                    </div>
+                </div>
             </section>
             <section class="et-slide" id="tab-angular">
                 <h1>Angular</h1>
