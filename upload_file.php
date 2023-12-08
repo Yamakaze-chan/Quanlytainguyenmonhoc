@@ -31,14 +31,14 @@ if( isset($_POST['upload_file'])){
     } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         $username = $_SESSION['username'];
-        $share = 0;
+        $share = $_POST['share'];
         $file = $_FILES["fileToUpload"]["name"];
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $time = date("Y-m-d H:i:s"); 
         $sql = "INSERT INTO saved_file (username, file, time, share) VALUES ('$username', '$file','$time', '$share')";
         mysqli_query($db, $sql);
         unset($_POST['upload_file']);
-        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+        header('Location: save_file.php');
     } else {
         echo "Sorry, there was an error uploading your file.";
     }

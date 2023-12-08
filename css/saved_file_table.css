@@ -1,0 +1,39 @@
+.save_file_table{
+    width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.save_file_table th,
+.save_file_table td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: white;
+}
+
+.save_file_table th {
+	text-align: left;
+}
+
+.save_file_table thead th {
+    background-color: #55608f;
+}
+
+.save_file_table tbody tr:hover {
+    background-color: rgba(206, 15, 15, 0.3);
+}
+	
+.save_file_table tbody td {
+    position: relative;
+}
+.save_file_table tbody td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255,255,255,0.2);
+    z-index: -1;
+}

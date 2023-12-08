@@ -18,15 +18,15 @@
         
     </head>
     <body>
-        <header class="header">
-            <a class="logo" href=".page-top">PixelStretch</a>
+    <header class="header">
+            <a class="logo" href="index.php">RLS</a>
             <input class="menu-btn" type="checkbox" id="menu-btn" />
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul class="menu">
-                    <li><a href="#one" class="link link-theme link-arrow">PART 1</a></li>
-                    <li><a href="#two" class="link link-theme link-arrow">PART 2</a></li>
-                    <li><a href="#three" class="link link-theme link-arrow">PART 3</a></li>
-                    <li><a href="#four" class="link link-theme link-arrow">PART 4</a></li>
+                    <li><a href="display_file.php" class="link link-theme link-arrow">Tài liệu PDF</a></li>
+                    <li><a href="video_content.php" class="link link-theme link-arrow">Video</a></li>
+                    <li><a href="save_file.php" class="link link-theme link-arrow">Tài liệu của bạn</a></li>
+                    <li><a href="#four" class="link link-theme link-arrow">Công cụ</a></li>
                 </ul>
         </header>
         <div id="wrap" style="width: 100%;">
