@@ -33,7 +33,7 @@ Ví dụ:
 - __*mysqli\_connect\('localhost:1212', ‘abc123’, 'def456', 'quanlytainguyenmonhoc'\)*__
 	- Tên của các table trong MySQL theo code:
 
-\+ user\(id, username, password, nickname\) – Thông tin đăng nhập của user
+\+ user\(id, username, password, nickname, admin\) – Thông tin đăng nhập của user
 
 \+ video\(id, title, link\) – Thông tin video
 
