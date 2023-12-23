@@ -19,10 +19,108 @@
         <link rel="stylesheet" href="./css/cat_homepage.css">
         <link rel="stylesheet" href="./css/robot_homepage.css">
         <link rel="stylesheet" href="./css/book.css">
+        <link rel="stylesheet" href="./css/footer.css">
         <!--Script-->
         <script src="./js/homepage.js"></script>
         <script src="./js/text_swap_homepage.js"></script>
-        
+        <!--Style-->
+        <style>
+          .popup-wrap {
+            width:100%;
+            height:100%;
+            display:none;
+            position:absolute;
+            top:0px;
+            left:0px;
+            content:'';
+            background:rgba(0,0,0,0.85);
+          }
+
+          .popup-box {
+            width:400px;
+            padding:70px;
+            transform:translate(-50%, -50%) scale(0.5);
+            position:absolute;
+            top:50%;
+            left:50%;
+            box-shadow:0px 2px 16px rgba(0,0,0,0.5);
+            border-radius:3px;
+            background:#fff;
+            text-align:center;
+            
+            h2 {
+              color:#1a1a1a;
+            }
+            
+            h3 {
+              color:#888;
+            }
+            
+            .close-btn {
+              width:35px;
+              height:35px;
+              display:inline-block;
+              position:absolute;
+              top:10px;
+              right:10px;
+              -webkit-transition:all ease 0.5s;
+              transition:all ease 0.5s;
+              border-radius:1000px;
+              background:#d75f70;
+              font-weight:bold;
+              text-decoration:none;
+              color:#fff;
+              line-height:190%;
+              
+              &:hover {
+                -webkit-transform:rotate(180deg);
+                transform:rotate(180deg);
+              }
+            }
+          }
+
+          .transform-in, .transform-out {
+            display:block;
+            -webkit-transition:all ease 0.5s;
+            transition:all ease 0.5s;
+          }
+
+          .transform-in {
+            -webkit-transform:translate(-50%, -50%) scale(1);
+            transform:translate(-50%, -50%) scale(1);
+          }
+
+          .transform-out {
+            -webkit-transform:translate(-50%, -50%) scale(0.5);
+            transform:translate(-50%, -50%) scale(0.5);
+          }
+
+          @import url(https://fonts.googleapis.com/css?family=Khula:700);
+.hidden {
+  opacity:0;
+}
+.console-container {
+  font-family:Khula;
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
+}
+        </style>
     </head>
     <body>
         <!-- Header -->
@@ -334,7 +432,20 @@
                     <div class="col-4">
                         <h1>Lưu trữ tài liệu</h1>
                         <h3>Cho bạn và cho mọi người</h3>
-                        <button onclick="location.href='save_file.php'">-></button>
+                        <?php if(!empty($_SESSION['username'])):?>
+                          <button onclick="location.href='save_file.php'">-></button>
+                        <?php else: ?>
+                          <button class="popup-btn">-></button>
+
+                          <div class="popup-wrap">
+                            <div class="popup-box">
+                              <h2>Yêu cầu đăng nhập</h2>
+                              <h3>Không đăng nhập là không dùng chức năng này được đâu</h3>
+                              <img src="./img/need_login.gif" width="100"/>
+                              <a class="close-btn popup-close" href="#">x</a>
+                            </div>
+                          </div>
+                          <?php endif; ?>
                     </div>
                     <div class="col-3">
                         <img src="./img/saved_doc1.jpg" style="width: 100%;">
@@ -345,6 +456,7 @@
                 <div class="row">
                     <h1>Công cụ hỗ trợ</h1>
                 </div>
+                <button onclick="location.href='tool_page.php'">-></button>
                 <div class="row">
                 <div id="webgl"></div>
                     <div id="bg-box">
@@ -507,13 +619,65 @@
                     <canvas class="webgl2"></canvas>
                 </div>
             </section>
+            <section class="et-slide" id="tab_admin" style="background-color: aqua;">
+            <div class="console-container"><span id="text" style="color:lightblue"></span><div class="console-underscore hidden" id="console">_</div></div>
+            <button onclick="location.href='admin_panel.php'" style="z-index: 10;">-></button>
+          </section>
         </main>
 
         <!--Footer-->
-        <footer>
-            Contact me on Twitter: <a href="https://www.twitter.com/TheGadgetMonkey">@TheGadgetMonkey</a>
-        </footer>
-        <p>Copyright © CM Cawley <?php echo date("Y"); ?></p> 
+          <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Đây là đồ án môn học</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Danh sách thành viên</h6>
+            <ul class="footer-links">
+              <li>Trần Quang Nhật - 20520675</li>
+              <li>Nguyễn Phúc Hưng - 20520527</li>
+              <li>Phạm Phước An - 20520375</li>
+              <li>Nguyễn Thị Mỹ Huyền - 20520559</li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+          <p><?php echo date("d"); ?>/<?php echo date("m"); ?>/<?php echo date("Y"); ?>
+         <a href="#">UIT</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+        
 
         <!--Cat-->
         <script>
@@ -1300,5 +1464,78 @@ function objects() {
 objects();
 
             </script>
+            <script>
+              $(document).ready(function() {
+  $('.popup-btn').click(function(e) {
+    $('.popup-wrap').fadeIn(500);
+    $('.popup-box').removeClass('transform-out').addClass('transform-in');
+
+    e.preventDefault();
+  });
+
+  $('.popup-close').click(function(e) {
+    $('.popup-wrap').fadeOut(500);
+    $('.popup-box').removeClass('transform-in').addClass('transform-out');
+
+    e.preventDefault();
+  });
+});
+            </script>
+
+            <!--Admin script-->
+            <script>
+// function([string1, string2],target id,[color1,color2])    
+consoleText(['Hello Admin', 'Đây là phần dành cho Admin'], 'text', ['white']);
+
+function consoleText(words, id, colors) {
+  if (colors === undefined) colors = ['#fff'];
+  var visible = true;
+  var con = document.getElementById('console');
+  var letterCount = 1;
+  var x = 1;
+  var waiting = false;
+  var target = document.getElementById(id);
+  target.setAttribute('style', 'color:' + colors[0]);
+  window.setInterval(function () {
+
+    if (letterCount === 0 && waiting === false) {
+      waiting = true;
+      target.innerHTML = words[0].substring(0, letterCount);
+      window.setTimeout(function () {
+        var usedColor = colors.shift();
+        colors.push(usedColor);
+        var usedWord = words.shift();
+        words.push(usedWord);
+        x = 1;
+        target.setAttribute('style', 'color:' + colors[0]);
+        letterCount += x;
+        waiting = false;
+      }, 1000);
+    } else if (letterCount === words[0].length + 1 && waiting === false) {
+      waiting = true;
+      window.setTimeout(function () {
+        x = -1;
+        letterCount += x;
+        waiting = false;
+      }, 1000);
+    } else if (waiting === false) {
+      target.innerHTML = words[0].substring(0, letterCount);
+      letterCount += x;
+    }
+  }, 120);
+  window.setInterval(function () {
+    if (visible === true) {
+      con.className = 'console-underscore hidden';
+      visible = false;
+
+    } else {
+      con.className = 'console-underscore';
+
+      visible = true;
+    }
+  }, 400);
+}
+//# sourceURL=pen.js
+    </script>
     </body>
 </html>

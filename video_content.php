@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -41,6 +42,10 @@
                 </ol>
             </div>
             <h1>Đã lưu</h1>
+            <div class="scroller">
+                <ol id="save_video_list">
+                </ol>
+            </div>
         </div>
     </body>
     <script>
@@ -60,10 +65,13 @@
                         html = `
                         <li style="--bg: #FC6A03;">
                             <a href="${data_values[2]}">
-                            <img src="http://img.youtube.com/vi/${id}/sddefault.jpg" width=480 class="align-self-center">
+                            <img src="http://img.youtube.com/vi/${id}/sddefault.jpg" min-width=300 width=480 class="align-self-center">
                             <h2>${data_values[1]}</h2>
                             </a>
-                            <button id="vid_watch_later">Hover 2</button>
+                            <input type='button' id="vid_watch_later" onclick="location.href='https://www.youtube.com/watch?v=${id}';" value="Xem ngay"/>
+                            <?php if(!empty($_SESSION['username'])):?>
+                            <button id="vid_watch_later" onclick="save_vid(\'${id}\')">Lưu lại</button>
+                            <?php endif;?>
                         </li>
                         `
                         $('#video_list').append(html);
@@ -106,7 +114,10 @@
                             <a href="${data_values[2]}">
                             <img src="http://img.youtube.com/vi/${id}/sddefault.jpg" min-width=300 width=480 class="align-self-center">
                             <h2>${data_values[1]}</h2>
-                            <button id="vid_watch_later">Hover 2</button>
+                            <input type='button' id="vid_watch_later" onclick="location.href='https://www.youtube.com/watch?v=${id}';" value="Xem ngay"/>
+                            <?php if(!empty($_SESSION['username'])):?>
+                            <button id="vid_watch_later" onclick="save_vid(\'${id}\')">Lưu lại</button>
+                            <?php endif;?>
                             </a>
                         </li>
                         `
@@ -120,5 +131,60 @@
             return false;    //<---- Add this line
         }
         });
+
+        $(function(e){
+            $.get( "get_video_content_user.php", 
+            { 
+                search_value: ""
+            },
+            function (data, success)
+            {
+                $('#save_video_list').html("");
+                data.split("///splithere///").forEach(element => {
+                    if(element.length != 0)
+                    {
+                        var data_values = element.split(";");
+                        var id = data_values[2].substr(data_values[2].indexOf("watch?v=")+8, data_values[2].length - data_values[2].indexOf("watch?v="));
+                        html = `
+                        <li style="--bg: #FC6A03;">
+                            <a href="${data_values[2]}">
+                            <img src="http://img.youtube.com/vi/${id}/sddefault.jpg" min-width=300 width=480 class="align-self-center">
+                            <h2>${data_values[1]}</h2>
+                            </a>
+                            <input type='button' id="vid_watch_later" onclick="location.href='https://www.youtube.com/watch?v=${id}';" value="Xem ngay"/>
+                            <button id="vid_watch_later" onclick="delete_vid(\'${id}\')">Xóa lưu</button>
+                        </li>
+                        `
+                        $('#save_video_list').append(html);
+                    }
+                });
+
+            }
+            )
+        })
+
+        function delete_vid(id){
+        $.get('delete_video_user.php',
+            {
+                id: id
+            },
+            function(data){
+                location.reload();
+            }
+            )
+            }
+
+        function save_vid(id)
+        {
+            var link = "https://www.youtube.com/watch?v="+id
+            $.post('save_video_user.php',
+            {
+                input_Youtube_vid: link
+            },
+            function(data){
+                location.reload();
+            }
+            )
+        }
     </script>
 </html>

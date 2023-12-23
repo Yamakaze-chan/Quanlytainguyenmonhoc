@@ -34,7 +34,7 @@
         if(count($error) == 0)
         {
             $password = md5($password1); //encrypt password
-            $sql = "INSERT INTO user (username, password, nickname) VALUES ('$username', '$password', '$nickname')";
+            $sql = "INSERT INTO user (username, password, nickname, admin) VALUES ('$username', '$password', '$nickname', '0')";
             mysqli_query($db, $sql);
             $_SESSION['username']=$username;
             $_SESSION['success']="You are now logged in";

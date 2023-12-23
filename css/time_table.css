@@ -1,0 +1,47 @@
+	
+	@media print
+	{    
+    	.no-print, .no-print *
+    	{
+        	display: none !important;
+    	}
+    	@page { size: a4;  margin: 10px; max-width: 100%; }
+ 	}
+
+    .time_crumbs
+    {
+    	border:1px solid lightgray; 
+    	background-color: orangered; 
+    	padding: 10px 4px; 
+    	border-radius: 7px; 
+    	color: white;
+    	z-index: 10;
+    }
+    .time_crumbs:hover
+    {
+	 cursor: pointer;
+	 z-index: 9999;
+	}
+	.delete_subject:hover
+	{
+		cursor: pointer;
+	}
+	.subject_crumbs:hover
+	{
+		cursor: pointer;
+		 z-index: 9999;
+	}
+	.top {z-index: 100!important; position: relative}
+	.bottom {z-index: 10!important; position: relative}
+	table.table-bordered > thead > tr > th
+	{
+ 	 border:2px solid dodgerblue;
+	}
+	table.table-bordered > tbody > tr > th
+	{
+ 	 border:2px solid dodgerblue;
+	}	
+	table.table-bordered > tbody > tr > td
+	{
+ 	 border:2px solid gray;
+	}
