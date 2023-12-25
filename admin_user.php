@@ -892,6 +892,143 @@ body {
   outline-width: 0px;
 }
 
+.overlay-form {
+  position:absolute;
+  top:50vh;
+  left:0px;
+  width:100vw;
+  height:0vh;
+  background:rgba(0,0,0,0.8);
+  color: white;
+  z-index:-1;
+  opacity:0;
+  padding:80px 100px;
+  overflow:hidden;
+  box-sizing:border-box;
+  transition: top 500ms ease-in-out,
+              opacity 500ms ease-in-out,
+              height 0ms ease-in-out 500ms;  
+}
+.overlay-form .close-btn {
+  position:absolute;
+  top:20px;
+  right:40px;
+  color:#fff;
+  font-size:40px;
+  font-weight:600;
+  cursor:pointer;
+}
+.overlay-form h1 {
+  font-size:32px;
+  color:#fff;
+}
+.overlay-form p {
+  font-size:16px;
+  color:#eee;
+  margin:-15px 0px 30px;
+}
+.overlay-form .form-element {
+  margin:20px 0px;
+}
+.overlay-form label {
+  display:block;
+  font-size:17px;
+  color:#eee;
+  margin-bottom:5px;
+}
+.overlay-form input {
+  width:100%;
+  padding:6px;
+  font-size:2em;
+  color: white;
+  border:2px solid #eee;
+  background:transparent;
+  outline:none;
+  border-radius:10px;
+}
+.overlay-form button,
+.center button {
+  margin-top:10px;
+  width:100px;
+  height:35px;
+  font-size:15px;
+  text-transform:uppercase;
+  background:#fff;
+  color:#222;
+  border:none;
+  outline:none;
+  border-radius:10px;
+}
+.center {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.center button {
+  width:150px;
+  height:40px;
+  font-weight:600;
+  box-shadow:3px 3px 2px 1px rgba(0,0,0,0.1);
+  cursor:pointer;
+}
+
+body.activeForm .overlay-form {
+  z-index:2;
+  opacity:1;
+  top:0px;
+  height:max-content;
+  transition: top 500ms ease-in-out,
+              opacity 500ms ease-in-out,
+              height 0ms ease-in-out 0ms;
+}
+
+.tgl-flip + .tgl-btn {
+  padding: 10px;
+  transition: all 0.2s ease;
+  font-family: sans-serif;
+  perspective: 100px;
+}
+.tgl-flip + .tgl-btn:after, .tgl-flip + .tgl-btn:before {
+  display: inline-block;
+  transition: all 0.4s ease;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  line-height: 2em;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 4px;
+}
+.tgl-flip + .tgl-btn:after {
+  content: attr(data-tg-on);
+  background: #02C66F;
+  transform: rotateY(-180deg);
+}
+.tgl-flip + .tgl-btn:before {
+  background: #FF3A19;
+  content: attr(data-tg-off);
+}
+.tgl-flip + .tgl-btn:active:before {
+  transform: rotateY(-20deg);
+}
+.tgl-flip:checked + .tgl-btn:before {
+  transform: rotateY(180deg);
+}
+.tgl-flip:checked + .tgl-btn:after {
+  transform: rotateY(0);
+  left: 0;
+  background: #7FC6A6;
+}
+.tgl-flip:checked + .tgl-btn:active:after {
+  transform: rotateY(20deg);
+}
+
 </style>  
 </head>
 
@@ -912,6 +1049,7 @@ body {
           <th>Nickname</th>
           <th>File đã chia sẻ</th>
           <th>Video đã chia sẻ</th>
+          <th>Admin</th>
           <th>Hành động</th>
         </tr>
       </thead>
@@ -978,6 +1116,9 @@ body {
     </select>
   </p>  
   </div>
+  <div style="width: 54%;display: inline-block; vertical-align: top; text-align:end">
+  <button onclick="toggleForm()">Tạo tài khoản</button>
+  </div>
 </div>
 
 <!--Overlay form-->
@@ -1016,6 +1157,32 @@ body {
 	</div>
 </div>
   
+<div class="overlay-form">
+  <div class="close-btn" onclick="toggleForm()">&times;</div>
+  <h1>Tạo tài khoản</h1>
+  <p class="error"></p>
+  <div class="form-element">
+    <label for="username">Tài khoản</label>
+    <input type="text" id="username">
+  </div>
+  <div class="form-element">
+    <label for="password-1">Mật khẩu</label>
+    <input type="password" id="password-1">
+  </div>
+  <div class="form-element">
+    <label for="password-2">Xác nhận mật khẩu</label>
+    <input type="password" id="password-2">
+  </div>
+  <div class="form-element">
+    <label for="nickname">Tên</label>
+    <input type="text" id="nickname">
+  </div>
+  <input class="tgl tgl-flip" id="cb5" type="checkbox" style=" padding: 10px"/>
+    <label class="tgl-btn" data-tg-off="Đây là tài khoản thường" data-tg-on="Đây là tài khoản Admin" for="cb5"></label>
+  <div class="form-element">
+    <button onclick="create_account()">Tạo</button>
+  </div>
+</div>
       <script>
 /**
  * Created by Kupletsky Sergey on 05.11.14.
@@ -1111,6 +1278,7 @@ jQuery.fn.removeClass = function( value ) {
                         <td data-title="nickname">${data_values[2]}</td>
                         <td data-title="file">${data_values[3]}</td>
                         <td data-title="video">${data_values[4]}</td>
+                        <td data-title="Admin">${data_values[5]}</td>
                         <td data-title="action">
                             <p><a class="button" href="#overlay_box" onclick="show_detail_user(\'${data_values[0]}\',\'${data_values[1]}\',\'${data_values[2]}\')">Xem chi tiết</a></p>
                             <p><a class="button" onclick="Delete_user(\'${data_values[1]}\')">Xóa người dùng</a></p>
@@ -1380,6 +1548,25 @@ $('#inpt_search').keyup(function(e){
                         location.reload();
                     }
                 })
+            }
+            function toggleForm(){
+                document.body.classList.toggle('activeForm');
+              }
+            function create_account(){
+              $.post('create_admin.php',{
+                username: $('#username').val(),
+                pass1: $('#password-1').val(),
+                pass2: $('#password-2').val(),
+                nickname: $('#nickname').val(),
+                admin: $('.tgl-flip').is(":checked")?"1":"0",
+              }, function(data){
+                if(data == "success"){
+                  location.reload();
+                }
+                else{
+                  $('.error').text(data)
+                }
+              })
             }
     </script>
 </body>
