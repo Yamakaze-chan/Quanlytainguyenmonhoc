@@ -37,6 +37,7 @@
             $sql = "INSERT INTO user (username, password, nickname, admin) VALUES ('$username', '$password', '$nickname', '0')";
             mysqli_query($db, $sql);
             $_SESSION['username']=$username;
+            $_SESSION['admin']="0";
             $_SESSION['success']="You are now logged in";
             header('location: index.php'); //redirect to index.php
         }
@@ -65,7 +66,9 @@
             $result = mysqli_query($db, $sql);
             if(mysqli_num_rows($result) == 1)
             {
+                $data=$result->fetch_assoc();
                 $_SESSION['username'] = $username;
+                $_SESSION['admin'] = $data['admin'];
                 $_SESSION['success'] = "You are logged in";
                 header('location: index.php');
             }
@@ -81,6 +84,7 @@
     {
         session_destroy();
         unset($_SESSION['username']);
+        unset($_SESSION['admin']);
         header('location: index.php');
     }
 ?>

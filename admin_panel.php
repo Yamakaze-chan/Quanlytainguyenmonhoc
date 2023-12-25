@@ -41,62 +41,22 @@
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-camera-retro fa-2x"></i>
+                    <a onclick="change_page('./admin_feedback.php')">
+                       <i class="fa fa-smile-o fa-2x"></i>
                         <span class="nav-text">
-                            Survey Photos
+                            Feedback
                         </span>
                     </a>
                    
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-film fa-2x"></i>
-                        <span class="nav-text">
-                            Surveying Tutorials
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-book fa-2x"></i>
-                        <span class="nav-text">
-                           Surveying Jobs
-                        </span>
-                    </a>
-                </li>
-                <li>
-                   <a href="#">
-                       <i class="fa fa-cogs fa-2x"></i>
-                        <span class="nav-text">
-                            Tools & Resources
-                        </span>
-                    </a>
-                </li>
-                <li>
-                   <a href="#">
-                        <i class="fa fa-map-marker fa-2x"></i>
-                        <span class="nav-text">
-                            Member Map
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                       <i class="fa fa-info fa-2x"></i>
-                        <span class="nav-text">
-                            Documentation
-                        </span>
-                    </a>
                 </li>
             </ul>
 
             <ul class="logout">
                 <li>
-                   <a href="#">
-                         <i class="fa fa-power-off fa-2x"></i>
+                   <a href="index.php">
+                         <i class="fa fa-angle-left fa-2x"></i>
                         <span class="nav-text">
-                            Logout
+                            Quay về
                         </span>
                     </a>
                 </li>  

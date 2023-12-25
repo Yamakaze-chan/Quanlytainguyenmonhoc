@@ -360,6 +360,9 @@
                 <a class="et-hero-tab" href="#tab-video">Video</a>
                 <a class="et-hero-tab" href="#tab-your_file">Tài liệu của bạn</a>
                 <a class="et-hero-tab" href="#tab-tool">Công cụ</a>
+                <?php if(isset($_SESSION['username']) && isset($_SESSION['admin']) && $_SESSION['admin'] == '1'): ?>
+                  <a class="et-hero-tab" href="#tab-admin">Admin</a>
+                <?php endif ?>
                 <span class="et-hero-tab-slider"></span>
             </div>
         </section>
@@ -619,10 +622,22 @@
                     <canvas class="webgl2"></canvas>
                 </div>
             </section>
-            <section class="et-slide" id="tab_admin" style="background-color: aqua;">
-            <div class="console-container"><span id="text" style="color:lightblue"></span><div class="console-underscore hidden" id="console">_</div></div>
-            <button onclick="location.href='admin_panel.php'" style="z-index: 10;">-></button>
-          </section>
+            <section class="et-slide" id="tab-feedback">
+                <div class="row">
+                    <h1>Gửi ý kiến</h1>
+                </div>
+                <div class="row">
+                  <img class="col" src="./img/feedback.png" height="200px">
+                  <button class="col" onclick="location.href='feedback.php'">-></button>
+                </div>
+            </section>
+            <?php if(isset($_SESSION['username']) && isset($_SESSION['admin']) && $_SESSION['admin'] == '1'): ?>
+            <section class="et-slide" id="tab-admin" style="background-color: aqua;">
+              <div class="console-container"><span id="text" style="color:lightblue"></span>
+              <div class="console-underscore hidden" id="console">_</div></div>
+              <button onclick="location.href='admin_panel.php'" style="z-index: 10;">-></button>
+            </section>
+            <?php endif ?>
         </main>
 
         <!--Footer-->
@@ -1535,7 +1550,6 @@ function consoleText(words, id, colors) {
     }
   }, 400);
 }
-//# sourceURL=pen.js
     </script>
     </body>
 </html>
