@@ -49,7 +49,7 @@
         </div>
         <script>   
     var scale = 1;
-    //Step 1: Get the file from the input element                
+                    
     $().ready(function(event) {
         $.get("get_PDF_file_content.php",
         {

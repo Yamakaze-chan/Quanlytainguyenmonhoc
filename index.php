@@ -3,7 +3,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="description" contents="About CM Cawley Biography website in PHP">
         <!--Lib-->
         <!--Jquery-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -33,7 +32,6 @@
             top:0px;
             left:0px;
             content:'';
-            background:rgba(0,0,0,0.85);
           }
 
           .popup-box {
@@ -107,7 +105,7 @@
   width:600px;
   display:block;
   position:absolute;
-  color:white;
+  color: blue;
   top:0;
   bottom:0;
   left:0;
@@ -120,6 +118,305 @@
   top:-0.14em;
   left:10px;
 }
+html,
+body {
+  background-color: #85b9dd;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  position: relative;
+}
+
+.frame {
+  width: 500px;
+  height: auto;
+  margin: 15% auto 0;
+  position: absolute;
+  width: 100%;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/**
+ * Paper Plane
+ */
+/*Paper Plane: Container*/
+.plane-container {
+  width: 200px;
+  margin: 0px auto;
+  z-index: 3;
+}
+ /*Paper Plane: Image*/
+.plane {
+  width: 100%;
+  height: 60px;
+}
+
+/*Paper Plane: Animation*/
+.plane-container {
+  -webkit-animation: paper-plane-scoping 2s alternate infinite;
+  -moz-animation: paper-plane-scoping 2s alternate infinite;
+  animation: paper-plane-scoping 2s alternate infinite;
+
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes paper-plane-scoping {
+  0% {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+}
+
+.plane {
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+
+  -webkit-animation: paper-plane-soaring 4s forwards infinite;
+  -moz-animation: paper-plane-soaring 4s forwards infinite;
+  animation: paper-plane-soaring 4s forwards infinite;
+}
+@-webkit-keyframes paper-plane-soaring {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  40% {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  60% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  70% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+/**
+ * Clouds
+ */
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.cloud {
+  position: absolute;
+  top: 20%;
+  width: 300px;
+  right: 0;
+  opacity: 1;
+}
+
+.cloud.front {
+  z-index: 9;
+}
+
+.cloud.distant {
+  z-index: 1;
+}
+
+.cloud.background {
+  z-index: 1;
+}
+
+/*Cloud Sizing*/
+.cloud.smaller {
+  margin-right: 400px;
+  width: 100px;
+  margin-top: 50px;
+}
+
+.cloud.small {
+  margin-right: 200px;
+  width: 150px;
+}
+
+.cloud.big {
+  width: 500px;
+  margin-top: 50px;
+  margin-right: 150px;
+}
+
+.cloud.massive {
+  width: 600px;
+  margin-top: 20px;
+  margin-right: 0px;
+}
+
+
+/*Cloud: Animation*/
+.cloud {
+  -webkit-animation-name: cloud-movement;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-direction: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 8s;
+
+  -moz-animation-name: cloud-movement;
+  -moz-animation-timing-function: linear;
+  -moz-animation-direction: forwards;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 8s;
+
+  animation-name: cloud-movement;
+  animation-timing-function: linear;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+}
+
+.slow {
+  -webkit-animation-duration: 9.2s;
+  -moz-animation-duration: 9.2s;
+  animation-duration: 9.2s;
+}
+
+.slower {
+  -webkit-animation-duration: 11.2s;
+  -moz-animation-duration: 11.2s;
+  animation-duration: 11.2s;
+}
+
+.slowest {
+  -webkit-animation-duration: 13.5s;
+  -moz-animation-duration: 13.5s;
+  animation-duration: 13.5s;
+}
+
+.super-slow {
+  -webkit-animation-duration: 20.5s;
+  -moz-animation-duration: 20.5s;
+  animation-duration: 20.5s;
+}
+
+@-webkit-keyframes cloud-movement {
+  0% {
+    opacity: 0.1;
+    -webkit-transform: translateX(300px);
+    -moz-transform: translateX(300px);
+    transform: translateX(300px);
+  }
+  10% {
+
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-1000px);
+    -moz-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+  }
+}
+
+
+button
+{
+  margin-top: 10px;
+  width: 200px;
+  background: none;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 22px;
+  transform: scale(1.5);
+  transition: 0.4s all;
+  font-family: verdana;
+  cursor: pointer;
+  transition-delay: 0.6s;
+}
+
+button::before
+{
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 2px solid #FFFFFF;
+  border-left: 2px solid #FFFFFF;
+  transition: 0.4s all;
+}
+
+button::after
+{
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #FFFFFF;
+  border-right: 2px solid #FFFFFF;
+  transition: 0.4s all;
+}
+
+button:hover
+{
+  background: #FFFFFF;
+  color: #5588ff;
+  box-shadow: 0 0 40px #FFFFFF;
+  text-shadow: 2px 2px 5px #FFFFFF;
+}
+
+button:hover::after
+{
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+}
+
+button:hover::before
+{
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+}
+
+
         </style>
     </head>
     <body>
@@ -139,8 +436,8 @@
                         </div>
                         <?php if(isset($_SESSION['username'])): ?>
                             <div class="typewriter" style="margin-top: 40px; z-index: index 99;">
-                                <h1>Hello <?php echo $_SESSION['username'];?></h1>
-                                <a href="index.php?logout='1'"><h2>Not me?</h2></a>
+                                <h1>Xin chào <?php echo $_SESSION['username'];?></h1>
+                                <a href="index.php?logout='1'"><h2>Not me</h2></a>
                             </div>
                         <?php endif ?>
                         <?php if(!isset($_SESSION['username'])): ?>
@@ -360,6 +657,7 @@
                 <a class="et-hero-tab" href="#tab-video">Video</a>
                 <a class="et-hero-tab" href="#tab-your_file">Tài liệu của bạn</a>
                 <a class="et-hero-tab" href="#tab-tool">Công cụ</a>
+                <a class="et-hero-tab" href="#tab-feedback">Feedback</a>
                 <?php if(isset($_SESSION['username']) && isset($_SESSION['admin']) && $_SESSION['admin'] == '1'): ?>
                   <a class="et-hero-tab" href="#tab-admin">Admin</a>
                 <?php endif ?>
@@ -368,23 +666,26 @@
         </section>
 
         <!-- Body -->
-        <main class="et-main">
-            <section class="et-slide" id="tab-PDF" style="background-color: aqua;">
+        <main class="et-main" style="background: linear-gradient(
+#5588ff,
+#00b8ff,
+#00fff9);">
+            <section class="et-slide" id="tab-PDF" style="background: none;">
                 <div class="row" style="width: 100%;">
-                    <div class="col-7 justify-content-center align-items-center">
+                    <div class="col-9 justify-content-center align-items-center">
                         <div>
                         <h1>Tài liệu lý thuyết</h1>
                         <h3>Chúng tôi tập hợp các tài liệu lý thuyết từ nhiều nguồn về đây</h3>
                         </div>
                     </div>
-                    <div class="component col-5 justify-content-center align-items-center">
+                    <div class="component col-3 justify-content-center align-items-center">
                         <!-- Book 1 -->
     <li>
       <figure class='book'>        
         <!-- Front -->        
         <ul class='hardcover_front'>
           <li>
-            <img src="https://s.cdpn.io/13060/book1.jpg" alt="" width="100%" height="100%">
+            <img src="./img/book_cover.png" alt="" width="100%" height="100%">
             <span class="ribbon bestseller">Nº1</span>
           </li>
           <li></li>
@@ -393,7 +694,7 @@
         <ul class='page'>
           <li></li>
           <li>
-            <a class="btn" href="./display_file.php">Download</a>
+            <a class="btn" href="./display_file.php">Xem tiếp</a>
           </li>
           <li></li>
           <li></li>
@@ -415,30 +716,102 @@
                 </div>
             </section>
             <section class="et-slide" id="tab-video">
-                <div class="row position-relative" style="width: 100%;">
+                <div class="row position-relative" style="width: 100%">
                     <div class="col-7 d-flex justify-content-center d-flex align-items-center">
                         <div>
                             <h1>Video hướng dẫn</h1>
                             <h3>Lý thuyết đi đôi với thực hành</h3>
-                            <button onclick="location.href='video_content.php'" type="button">-></button>
+                            <div class="center">
+                              <button onclick="location.href='video_content.php'">
+                               >>>
+                              </button>
+                            </div>
+                            <div class="sq"></div>
+                            <div class="sq"></div>
                         </div>
                     </div>
                     <div class="col-5 col-5 d-flex justify-content-center d-flex align-items-center order-first">
-                        <img src="../img/drawing_Mumei.gif">
+                    <div class="frame">
+                      <div class="plane-container">
+                      <a href='video_content.php' target="_blank">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      width="1131.53px" height="379.304px" viewBox="0 0 1131.53 379.304" enable-background="new 0 0 1131.53 379.304"
+                      xml:space="preserve" class="plane">
+                      <polygon fill="#D8D8D8" points="72.008,0 274.113,140.173 274.113,301.804 390.796,221.102 601.682,367.302 1131.53,0.223  "/>
+                      <polygon fill="#C4C4C3" points="1131.53,0.223 274.113,140.173 274.113,301.804 390.796,221.102   "/>
+                      </svg></a>
+
+                      </div>
+                      </div>
+                      <div class="clouds">
+
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud big front slowest">
+                      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                      c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                      C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                      S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                      </svg>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant smaller">
+                      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                      c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                      C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                      S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                      </svg>
+
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small slow">
+                      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                      c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                      C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                      S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                      </svg>
+
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant super-slow massive">
+                      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                      c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                      C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                      S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                      </svg>
+
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud slower">
+                      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                      c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                      C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                      S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                      </svg>
+
+                      </div>
+
                     </div>
             </section>
-            <section class="et-slide" id="tab-your_file" style="background-color: white">
+            <section class="et-slide" id="tab-your_file">
                 <div class="row align-items-center justify-content-around" ;>
                     <div class="col-3">
-                        <img src="./img/saved_doc2.jpg" style="width: 100%;">
+                        <img src="./img/saved_doc2.png" style="width: 100%;">
                     </div>
                     <div class="col-4">
                         <h1>Lưu trữ tài liệu</h1>
                         <h3>Cho bạn và cho mọi người</h3>
                         <?php if(!empty($_SESSION['username'])):?>
-                          <button onclick="location.href='save_file.php'">-></button>
+                          <div class="center">
+                              <button onclick="location.href='save_file.php'">
+                               >>>
+                              </button>
+                            </div>
+                            <div class="sq"></div>
+                            <div class="sq"></div>
                         <?php else: ?>
-                          <button class="popup-btn">-></button>
+                          <div class="center">
+                              <button class="popup-btn">
+                               >>>
+                              </button>
+                            </div>
+                            <div class="sq"></div>
+                            <div class="sq"></div>
 
                           <div class="popup-wrap">
                             <div class="popup-box">
@@ -451,7 +824,7 @@
                           <?php endif; ?>
                     </div>
                     <div class="col-3">
-                        <img src="./img/saved_doc1.jpg" style="width: 100%;">
+                        <img src="./img/saved_doc1.png" style="width: 100%;">
                     </div>
                 </div>
             </section>
@@ -459,7 +832,13 @@
                 <div class="row">
                     <h1>Công cụ hỗ trợ</h1>
                 </div>
-                <button onclick="location.href='tool_page.php'">-></button>
+                <div class="center">
+                              <button onclick="location.href='tool_page.php'">
+                               >>>
+                              </button>
+                            </div>
+                            <div class="sq"></div>
+                            <div class="sq"></div>
                 <div class="row">
                 <div id="webgl"></div>
                     <div id="bg-box">
@@ -627,15 +1006,27 @@
                     <h1>Gửi ý kiến</h1>
                 </div>
                 <div class="row">
-                  <img class="col" src="./img/feedback.png" height="200px">
-                  <button class="col" onclick="location.href='feedback.php'">-></button>
+                  <img class="col" src="./img/feedback.png" height="200px" >
+                  <div class="center col align-self-center">
+                    <button onclick="location.href='feedback.php'">
+                      >>>
+                    </button>
+                  </div>
+                  <div class="sq"></div>
+                  <div class="sq"></div>
                 </div>
             </section>
             <?php if(isset($_SESSION['username']) && isset($_SESSION['admin']) && $_SESSION['admin'] == '1'): ?>
-            <section class="et-slide" id="tab-admin" style="background-color: aqua;">
-              <div class="console-container"><span id="text" style="color:lightblue"></span>
+            <section class="et-slide" id="tab-admin">
+              <div class="console-container"><span id="text" style="color: red"></span>
               <div class="console-underscore hidden" id="console">_</div></div>
-              <button onclick="location.href='admin_panel.php'" style="z-index: 10;">-></button>
+              <div class="center">
+                              <button onclick="location.href='admin_panel.php'" style="z-index: 10;">
+                               >>>
+                              </button>
+                            </div>
+                            <div class="sq"></div>
+                            <div class="sq"></div>
             </section>
             <?php endif ?>
         </main>
@@ -1500,7 +1891,7 @@ objects();
             <!--Admin script-->
             <script>
 // function([string1, string2],target id,[color1,color2])    
-consoleText(['Hello Admin', 'Đây là phần dành cho Admin'], 'text', ['white']);
+consoleText(['Hello Admin', 'Đây là phần dành cho Admin'], 'text', ['blue']);
 
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
