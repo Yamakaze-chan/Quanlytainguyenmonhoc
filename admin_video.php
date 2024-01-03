@@ -199,7 +199,7 @@ input[type="submit"]:hover {
                             <img src="http://img.youtube.com/vi/${id}/sddefault.jpg" class = "card__image">
                             <div class="card__content">
                                 <div class="card__title">${data_values[1]}</div>
-                                <button class="btn btn--block card__btn" onclick="location.href='https://www.youtube.com/watch?v=${id}';">Xem</button>
+                                <button class="btn btn--block card__btn" onclick="location.href='https://www.youtube.com/embed/${id}';">Xem</button>
                                 <button class="btn btn--block card__btn" onclick="Delete_video(\'${id}\')">Xóa</button>
                             </div>
                             </div>
@@ -245,7 +245,7 @@ input[type="submit"]:hover {
                             <img src="http://img.youtube.com/vi/${id}/sddefault.jpg" class = "card__image">
                             <div class="card__content">
                                 <div class="card__title">${data_values[1]}</div>
-                                <button class="btn btn--block card__btn" onclick="location.href='https://www.youtube.com/watch?v=${id}';">Xem</button>
+                                <button class="btn btn--block card__btn" onclick="location.href='https://www.youtube.com/embed/${id}';">Xem</button>
                                 <button class="btn btn--block card__btn" onclick="Delete_video(\'${id}\')">Xóa</button>
                             </div>
                             </div>
