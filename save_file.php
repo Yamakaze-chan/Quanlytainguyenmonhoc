@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="./css/saved_file_table.css">
 
 </head>
-<body>
+<body style="overflow-x:hidden;">
 <header class="header">
     <a class="logo" href="index.php">RLS</a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
@@ -47,7 +47,7 @@
                             <i class="glyphicon glyphicon-download-alt"></i>
                             <p>Choose an PDF file or drag it here.</p>
                         </div>
-                        <input type="file" name="fileToUpload" id="fileToUpload" class="dropzone" multiple>
+                        <input type="file" name="fileToUpload" id="fileToUpload" class="dropzone" accept="application/pdf" multiple>
                         </div>
                     </div>
                     </div>
@@ -75,7 +75,7 @@
         </form>
         </div>
         <div class="col-9" style="background: linear-gradient(45deg, #49a09d, #5f2c82);">
-            <div class="row" style="height:50vh;">
+            <div class="row">
                 <div class="table-responsive">
                     <form method="post">
                     <table class = "table table-bordered table-striped table-hover save_file_table">

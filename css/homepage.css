@@ -25,15 +25,10 @@ a {
 }
 .et-hero-tabs h1,
 .et-slide h1 {
-  font-size: 2rem;
+  font-family: 'EB Garamond', serif;
+  color: #FFFFFF;
+  font-size: 3em;
   margin: 0;
-  letter-spacing: 1rem;
-}
-.et-hero-tabs h3,
-.et-slide h3 {
-  font-size: 1rem;
-  letter-spacing: 0.3rem;
-  opacity: 0.6;
 }
 
 .et-hero-tabs-container {
@@ -126,7 +121,7 @@ a {
 @media (min-width: 800px) {
   .et-hero-tabs h1,
 .et-slide h1 {
-    font-size: 3rem;
+    font-size: 7rem;
   }
   .et-hero-tabs h3,
 .et-slide h3 {
