@@ -439,7 +439,7 @@ button:hover::before
                         </div>
                         <?php if(isset($_SESSION['username'])): ?>
                             <div class="typewriter" style="margin-top: 40px; z-index: index 99;">
-                                <h1>Xin chào <?php echo $_SESSION['username'];?></h1>
+                                <h1 style="font-size: 2em;">Xin chào <?php echo $_SESSION['username'];?></h1>
                                 <a href="index.php?logout='1'"><h2>Not me</h2></a>
                             </div>
                         <?php endif ?>
