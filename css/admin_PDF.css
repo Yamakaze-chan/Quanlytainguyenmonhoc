@@ -27,7 +27,7 @@
 
 
 
-li {
+#list li {
   transition-property: margin, background-color, border-color;
   transition-duration: .4s, .2s, .2s;
   transition-timing-function: ease-in-out, ease, ease;
@@ -56,7 +56,7 @@ li {
   display:none;
 }
 
-ul {
+#list {
   float:left;
   width:100%;
   margin:2em 0;
@@ -64,7 +64,7 @@ ul {
   position:relative;
 }
 
-ul:before {
+#list:before {
   content:'PDF';
   position:absolute;
   left:0em;
@@ -78,7 +78,7 @@ ul:before {
   transform:rotate(-90deg);
 }
 
-li {
+#list li {
   float:left;
   clear:left;
   width:100%;
@@ -93,7 +93,7 @@ li {
   z-index:2;
 }
 
-li:hover {
+#list li:hover {
   background-color:#f9f9f9;
   border-color:#00BDE8;
 }
