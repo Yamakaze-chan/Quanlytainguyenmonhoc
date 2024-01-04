@@ -1034,8 +1034,10 @@ body.activeForm .overlay-form {
 
 <body style="margin:0px; padding: 0px">
   <div id="demo">
-  <h1>Material Design Responsive Table</h1>
-  <h2>Table of my other Material Design works (list was updated 08.2015)</h2>
+  <h1 style="text-align:center; font-size: 2em; font-weight: bold">Danh sách <text style="color:red">User</text></h1>
+            <h3 style="text-align:center">
+                Trang chỉnh sửa thông tin User trên hệ thống dành cho Admin
+            </h3>
   
   <!-- Responsive table starts here -->
   <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
@@ -1054,69 +1056,11 @@ body.activeForm .overlay-form {
         </tr>
       </thead>
       <tbody id="main_content">
-        <tr>
-          <td data-title="ID">1</td>
-          <td data-title="username">abcde</td>
-          <td data-title="nickname">abcde</td>
-          <td data-title="file">abcde</td>
-          <td data-title="video">abcde</td>
-          <td data-title="action">
-            <button>Xem chi tiết</button>
-            <button>Xóa người dùng</button>
-          </td>
-        </tr>
       </tbody>
     </table>
   </div>
   
-  <!-- Table Constructor change table classes, you don't need it in your project -->
-  <div style="width: 45%; display: inline-block; vertical-align: top">
-  <h2>Table Constructor</h2>
-  <p>
-    <label for="table-bordered">Style: bordered</label>
-    <select id="table-bordered" name="table-bordered">
-      <option selected="" value="">No</option>
-      <option value="table-bordered">Yes</option>
-    </select>
-  </p>
-  <p>
-    <label for="table-striped">Style: striped</label>
-    <select id="table-striped" name="table-striped">
-      <option selected="" value="">No</option>
-      <option value="table-striped">Yes</option>
-    </select>
-  </p>
-  <p>
-    <label for="table-hover">Style: hover</label>
-    <select id="table-hover" name="table-hover">
-      <option value="">No</option>
-      <option selected="" value="table-hover">Yes</option>
-    </select>
-  </p>
-  <p>
-    <label for="table-color">Style: color</label>
-    <select id="table-color" name="table-color">
-      <option value="">Default</option>
-      <option value="table-mc-red">Red</option>
-      <option value="table-mc-pink">Pink</option>
-      <option value="table-mc-purple">Purple</option>
-      <option value="table-mc-deep-purple">Deep Purple</option>
-      <option value="table-mc-indigo">Indigo</option>
-      <option value="table-mc-blue">Blue</option>
-      <option selected="" value="table-mc-light-blue">Light Blue</option>
-      <option value="table-mc-cyan">Cyan</option>
-      <option value="table-mc-teal">Teal</option>
-      <option value="table-mc-green">Green</option>
-      <option value="table-mc-light-green">Light Green</option>
-      <option value="table-mc-lime">Lime</option>
-      <option value="table-mc-yellow">Yellow</option>
-      <option value="table-mc-amber">Amber</option>
-      <option value="table-mc-orange">Orange</option>
-      <option value="table-mc-deep-orange">Deep Orange</option>
-    </select>
-  </p>  
-  </div>
-  <div style="width: 54%;display: inline-block; vertical-align: top; text-align:end">
+  <div style="display: inline-block; vertical-align: top; text-align:end;">
   <button onclick="toggleForm()">Tạo tài khoản</button>
   </div>
 </div>
@@ -1177,7 +1121,7 @@ body.activeForm .overlay-form {
     <label for="nickname">Tên</label>
     <input type="text" id="nickname">
   </div>
-  <input class="tgl tgl-flip" id="cb5" type="checkbox" style=" padding: 10px"/>
+  <input class="tgl tgl-flip" id="cb5" type="checkbox" style=" padding: 10px;-webkit-appearance: none;-moz-appearance: none; appearance: none;border: 0px;"/>
     <label class="tgl-btn" data-tg-off="Đây là tài khoản thường" data-tg-on="Đây là tài khoản Admin" for="cb5"></label>
   <div class="form-element">
     <button onclick="create_account()">Tạo</button>

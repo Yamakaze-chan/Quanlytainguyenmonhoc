@@ -27,7 +27,7 @@
                     <li><a href="display_file.php" class="link link-theme link-arrow">Tài liệu PDF</a></li>
                     <li><a href="video_content.php" class="link link-theme link-arrow">Video</a></li>
                     <li><a href="save_file.php" class="link link-theme link-arrow">Tài liệu của bạn</a></li>
-                    <li><a href="#four" class="link link-theme link-arrow">Công cụ</a></li>
+                    <li><a href="tool_page.php" class="link link-theme link-arrow">Công cụ</a></li>
                 </ul>
         </header>
         <div id="wrap" style="width: 100%;">
@@ -126,6 +126,34 @@
                     
                 });
                 }
+            }
+            )
+            $.get( "get_video_content_user.php", 
+            { 
+                search_value: $(this).val()
+            },
+            function (data, success)
+            {
+                $('#save_video_list').html("");
+                data.split("///splithere///").forEach(element => {
+                    if(element.length != 0)
+                    {
+                        var data_values = element.split(";");
+                        var id = data_values[2].substr(data_values[2].indexOf("watch?v=")+8, data_values[2].length - data_values[2].indexOf("watch?v="));
+                        html = `
+                        <li style="--bg: #FC6A03;">
+                            <a href="${data_values[2]}">
+                            <img src="http://img.youtube.com/vi/${id}/sddefault.jpg" min-width=300 width=480 class="align-self-center">
+                            <h2>${data_values[1]}</h2>
+                            </a>
+                            <input type='button' id="vid_watch_later" onclick="location.href='https://www.youtube.com/watch?v=${id}';" value="Xem ngay"/>
+                            <button id="vid_watch_later" onclick="delete_vid(\'${id}\')">Xóa lưu</button>
+                        </li>
+                        `
+                        $('#save_video_list').append(html);
+                    }
+                });
+
             }
             )
             return false;    //<---- Add this line

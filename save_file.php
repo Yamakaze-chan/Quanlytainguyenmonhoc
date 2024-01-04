@@ -30,7 +30,7 @@
             <li><a href="display_file.php" class="link link-theme link-arrow">Tài liệu PDF</a></li>
             <li><a href="video_content.php" class="link link-theme link-arrow">Video</a></li>
             <li><a href="save_file.php" class="link link-theme link-arrow">Tài liệu của bạn</a></li>
-            <li><a href="#four" class="link link-theme link-arrow">Công cụ</a></li>
+            <li><a href="tool_page.php" class="link link-theme link-arrow">Công cụ</a></li>
         </ul>
 </header>
     <div class="row" style="height: 100vh; padding-top: 100px;">

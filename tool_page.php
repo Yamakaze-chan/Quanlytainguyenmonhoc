@@ -1258,7 +1258,7 @@ body .ui-tooltip {
 
 
 
-li {
+#list li {
   transition-property: margin, background-color, border-color;
   transition-duration: .4s, .2s, .2s;
   transition-timing-function: ease-in-out, ease, ease;
@@ -1287,7 +1287,7 @@ li {
   display:none;
 }
 
-ul {
+#list {
   float:left;
   width:100%;
   margin:2em 0;
@@ -1295,7 +1295,7 @@ ul {
   position:relative;
 }
 
-ul:before {
+#list:before {
   content:'';
   position:absolute;
   left:-2.8em;
@@ -1308,7 +1308,7 @@ ul:before {
   transform:rotate(-90deg);
 }
 
-li {
+#list a li {
   float:left;
   clear:left;
   width:100%;
@@ -1324,7 +1324,7 @@ li {
   
 }
 
-li:hover {
+#list a li:hover {
   background-color:#f9f9f9;
   border-color:#00BDE8;
 }
@@ -1563,7 +1563,20 @@ p {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-  <a href="index.php" style="text-decoration:none"><div style="font-size: 2rem;">Quay về</div></a>
+<link rel="stylesheet" href="./css/header.css">
+</head>
+<body>
+<header class="header">
+            <a class="logo" href="index.php">RLS</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu">
+                    <li><a href="display_file.php" class="link link-theme link-arrow">Tài liệu PDF</a></li>
+                    <li><a href="video_content.php" class="link link-theme link-arrow">Video</a></li>
+                    <li><a href="save_file.php" class="link link-theme link-arrow">Tài liệu của bạn</a></li>
+                    <li><a href="tool_page.php" class="link link-theme link-arrow">Công cụ</a></li>
+                </ul>
+        </header>
   <h1>Các công cụ hỗ trợ</h1>
   <h3>
     Đơn giản chỉ là công cụ
