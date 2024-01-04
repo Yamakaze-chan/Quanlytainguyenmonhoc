@@ -1070,7 +1070,7 @@ body.activeForm .overlay-form {
 <div id="overlay_box" class="overlay">
 	<div class="popup">
 		<h2>Thông tin chi tiết</h2>
-		<a class="close" href="#">&times;</a>
+		<a class="close" onclick="$('#inpt_search').val('')" href="#">&times;</a>
 		<div class="content row">
             <div class="col">
 			<p>ID: <text id="id_detail"></text></p>
