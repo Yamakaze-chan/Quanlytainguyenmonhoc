@@ -48,7 +48,12 @@ if(isset($_POST['save_vid']) ) {
     if(isset($_POST['input_Youtube_vid']) && !empty($_POST['input_Youtube_vid']))
     {
         $link_youtube = $_POST['input_Youtube_vid'];
-        $title =  explode('</title>', explode('<title>', file_get_contents($_POST['input_Youtube_vid']))[1])[0];
+        $curlSession = curl_init();
+            curl_setopt($curlSession, CURLOPT_URL, 'https://noembed.com/embed?url='.$_POST['input_Youtube_vid']);
+            curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
+            $jsonData = json_decode(curl_exec($curlSession));
+            curl_close($curlSession);
+            $title = $jsonData->title;
         $username = $_SESSION['username'];
         $sql = "INSERT INTO video (title, link, username) VALUES ('$title', '$link_youtube', '$username')";
         $result = $db->query($sql);

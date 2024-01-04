@@ -143,12 +143,12 @@
             {
             var youtube_link = document.getElementById("input_Youtube_vid").value;
             var id = youtube_link.substr(youtube_link.indexOf("watch?v=")+8, youtube_link.length - youtube_link.indexOf("watch?v="));
-            $.get('upload_file.php',
+            $.post('upload_file.php',
             {
-                youtube_id_vid: id
+                youtube_id_vid: id,
             },
             function(data){
-                console.log("aaaaaaaaa");
+                console.log(data);
             }
             )
             }
