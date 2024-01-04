@@ -1403,7 +1403,7 @@ $('#inpt_search').keyup(function(e){
             $.get( "get_video_content_user.php", 
             { 
                 search_value: $('#inpt_search').val(),
-                username: $("username_detail").text(),
+                username: $("#username_detail").text(),
             },
             function (data, success)
             {
