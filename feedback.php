@@ -1,6 +1,7 @@
 <?php include('server.php') ?>
 <html lang="en">
     <head>
+    <title>RLS</title>
 <style>
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 *,
@@ -476,7 +477,7 @@ html {
 </head>
 
 <body>
-    
+    <h3 onclick="location.href='index.php'">Quay về</h3>
   <h1>Feedback Form</h1>
 <form class="cf">
   <div class="half left cf">

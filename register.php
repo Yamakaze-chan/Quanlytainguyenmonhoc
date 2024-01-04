@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User registration system using PHP and MySQL</title>
+        <title>RLS</title>
     </head>
     <style>
         html {
@@ -206,6 +206,11 @@ body {
                 <input type="hidden" name="register"/>
                 <a href="login.php">
                 Login
+                </a>
+                <br>
+                <input type="hidden"/>
+                <a href="index.php">
+                Quay về trang chủ
                 </a>
         </form>
         </div>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User login system using PHP and MySQL</title>
+        <title>RLS</title>
         <style>
             html {
   height: 100%;
@@ -197,6 +197,11 @@ body {
                 <input type="hidden" name="login"/>
                 <a href="register.php">
                 Sign up
+                </a>
+                <br>
+                <input type="hidden"/>
+                <a href="index.php">
+                Quay về trang chủ
                 </a>
             </form>
             </div>

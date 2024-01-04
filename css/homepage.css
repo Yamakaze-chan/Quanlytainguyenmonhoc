@@ -31,6 +31,14 @@ a {
   margin: 0;
 }
 
+.et-hero-tabs h3,
+.et-slide h3 {
+  font-family: 'EB Garamond', serif;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  margin: 0;
+}
+
 .et-hero-tabs-container {
   display: flex;
   flex-direction: row;
@@ -125,7 +133,7 @@ a {
   }
   .et-hero-tabs h3,
 .et-slide h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .et-hero-tab {

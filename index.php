@@ -3,6 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <title>RLS</title>
         <!--Lib-->
         <!--Jquery-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -439,7 +440,7 @@ button:hover::before
                         </div>
                         <?php if(isset($_SESSION['username'])): ?>
                             <div class="typewriter" style="margin-top: 40px; z-index: index 99;">
-                                <h1 style="font-size: 2em;">Xin chào <?php echo $_SESSION['username'];?></h1>
+                                <h1 style="font-size: 2em;">Xin chào <?php echo mysqli_query($db, "SELECT * FROM user WHERE username='".$_SESSION['username']."'")->fetch_assoc()['nickname'];?></h1>
                                 <a href="index.php?logout='1'"><h2>Not me</h2></a>
                             </div>
                         <?php endif ?>
@@ -834,6 +835,7 @@ button:hover::before
             <section class="et-slide" id="tab-tool">
                 <div class="row">
                     <h1>Công cụ hỗ trợ</h1>
+                    <h3>Một vài công cụ cho cuộc sống dễ dàng hơn</h3>
                 </div>
                 <div class="center">
                               <button onclick="location.href='tool_page.php'">
@@ -1007,6 +1009,7 @@ button:hover::before
             <section class="et-slide" id="tab-feedback">
                 <div class="row">
                     <h1>Gửi ý kiến</h1>
+                    <h3>Chúng ta hãy cùng nhau phát triển</h3>
                 </div>
                 <div class="row">
                   <img class="col" src="./img/feedback.png" height="200px" >
@@ -1055,13 +1058,9 @@ button:hover::before
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Github</h6>
+            <h6>Source code</h6>
             <ul class="footer-links">
-              <li><a href="http://scanfcode.com/about/">About Us</a></li>
-              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+              <li><a href="https://github.com/Yamakaze-chan/Quanlytainguyenmonhoc">Github</a></li>
             </ul>
           </div>
         </div>
@@ -1075,14 +1074,14 @@ button:hover::before
             </p>
           </div>
 
-          <div class="col-md-4 col-sm-6 col-xs-12">
+          <!-- <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
               <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
               <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
             </ul>
-          </div>
+          </div> -->
         </div>
       </div>
 </footer>

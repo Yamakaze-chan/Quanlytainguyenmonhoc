@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <title>RLS</title>
         <meta charset="UTF-8">
         <meta name="description" contents="About CM Cawley Biography website in PHP">
         <!--Lib-->

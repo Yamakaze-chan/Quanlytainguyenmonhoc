@@ -16,6 +16,7 @@ canvas {
   display: block;
 }
 </style>  
+<title>RLS</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/admin_PDF.css" rel="stylesheet">
 <link href="./css/header.css" rel="stylesheet">

@@ -16,11 +16,20 @@
         //ensure form has been filled
         if(empty($username))
         {
-            array_push($error, "Username id required");
+            array_push($error, "Username không được trống");
+        }
+        else
+        {
+            $sql = "SELECT * FROM user WHERE username='$username'";
+            $result = mysqli_query($db, $sql);
+            if(mysqli_num_rows($result) != 0)
+            {
+                array_push($error, "Username đã tồn tại, vui lòng chọn Username khác");
+            }
         }
         if(empty($password1))
         {
-            array_push($error, "Password id required");
+            array_push($error, "Mật khẩu không được trống");
         }
         if(empty($nickname))
         {
@@ -28,7 +37,7 @@
         }
         if($password1!=$password2)
         {
-            array_push($error, "Two passwords do not match");
+            array_push($error, "Hai mật khẩu không tương thích");
         }
         //if there is no error
         if(count($error) == 0)
@@ -52,11 +61,11 @@
         //ensure form has been filled
         if(empty($username))
         {
-            array_push($error, "Username id required");
+            array_push($error, "Vui lòng nhập Username");
         }
         if(empty($password))
         {
-            array_push($error, "Password id required");
+            array_push($error, "Vui lòng nhập mật khẩu");
         }
         //if there is no error
         if(count($error) == 0)
@@ -74,7 +83,7 @@
             }
             else
             {
-                array_push($error, "Wrong Username or Password");
+                array_push($error, "Sai Username hoặc mật khẩu");
             }
         }
     }
