@@ -1044,7 +1044,7 @@ button:hover::before
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
-            <p class="text-justify">Đây là đồ án môn học</p>
+            <p class="text-justify">Đây là đồ án môn học IS207.O12.HTCL</p>
           </div>
 
           <div class="col-xs-6 col-md-3">
